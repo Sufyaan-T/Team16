@@ -10,8 +10,8 @@
 
 /*sets the properties for the body*/
 body{
-    --colorPrimary: #a800aa;
-    --colorPrimaryDark: #420142 ;
+    --colorPrimary: #4B0150;
+    --colorPrimaryDark: #2d0130 ;
     --colorSecondary:#000000;
     --colorError: #ba0000;
     --colorSuccess: #4bb544;

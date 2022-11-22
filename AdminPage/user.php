@@ -23,37 +23,38 @@ if (isset($_POST['SubmitButton'])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fill in Details</title>
-    <!--Bootstrap CSS link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Add User</title>
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Add User</h1>
 
-    <div class="container my-5 ">
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#"><img src="images/Logo.png" class="logo"></a>
+        <ul>
+            <li><a href="user.php">Add User</a></li>
+            <li><a href="additem.php">Add Item</a></li>
+            <li><a href="adminpage.php">Database</a></li>
+            <li><a href="logout.php">Log Out</a></li>
 
-    <button class="btn btn-primary my-5">
-            <a href="adminpage.php" class="text-light">Admin Page</a>
-        </button>
+        </ul>
+    </div>
 
-        <form method="post">
-            <div class="form-group">
-                <label>Name</label>
-                <input type="text-box" class="form-control" placeholder="Enter Name" name="UserName" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <label>Email address</label>
-                <input type="email" class="form-control" placeholder="Enter Email" name="UserEmail" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" placeholder="Enter Password" name="UserPassword"
-                    autocomplete="off">
-            </div>
-            <button type="submit" class="btn btn-primary" name="SubmitButton">Submit</button>
-            
+          <!-- Input Box -->
+    <div class="addingBox">
+        <form class="addingInputs" method="post">
+            <h1>Create New User</h1>
+
+            <input type="text-box" class="formInput" placeholder="Enter Name" name="UserName" autocomplete="off">
+
+            <input type="text-box" class="formInput" placeholder="Enter Email" name="UserEmail" autocomplete="off">
+
+            <input type="text-box" class="formInput" placeholder="Enter Password" name="UserPassword" autocomplete="off">
+
+            <button type="submit" class="submitButton" name="SubmitButton">Submit</button>
+
+
         </form>
 </body>
 </div>

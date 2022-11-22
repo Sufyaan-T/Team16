@@ -1,6 +1,5 @@
 <!--Pantelis Xiourouppas - 160056307 -->
 <?php
-
 include 'connect.php';
 ?>
 
@@ -11,20 +10,28 @@ include 'connect.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Bootstrap CSS link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
     <title>Admin Page</title>
 </head>
 
 <body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#"><img src="images/Logo.png" class="logo"></a>
+        <ul>
+            <li><a href="user.php">Add User</a></li>
+            <li><a href="additem.php">Add Item</a></li>
+            <li><a href="adminpage.php">Database</a></li>
+            <li><a href="logout.php">Log Out</a></li>
+
+        </ul>
+
+    </div>
     <!-- USERS TABLE -->
     <div class="container">
-        <button class="btn btn-primary my-5">
-            <a href="user.php" class="text-light">Add User</a>
-        </button>
+        <h1>User Database</h1>
 
-        <table class="table">
+        <table class="admin-table">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -54,18 +61,16 @@ include 'connect.php';
                       <td>' . $password . '</td>
 
                       <td>
-                       <button class="btn btn-primary" >
-                        <a href = "idUpdate.php? idUpdate= ' . $id . '" class="text-light"> Update 
-                        </a>
-                       </button>
-                       <button class="btn btn-danger" >
-                        <a href = "delete.php? idDelete=' . $id . '" class="text-light"> Delete 
-                        </a>
-                       </button>
+                     
+
+                       <a class="button-update" title="Relevant Title" href = "idUpdate.php? idUpdate= ' . $id . '">Update</a>
+                       <a class="button-delete" title="Relevant Title" href = "delete.php? idDelete=' . $id . '">Delete</a>
+
+                       
+                       
                       </td>
                       </tr>';
                     }
-
                 }
 
                 ?>
@@ -78,11 +83,8 @@ include 'connect.php';
 
     <!-- CART TABLE -->
     <div class="container">
-        <button class="btn btn-primary my-5">
-            <a href="additem.php" class="text-light">Add Item</a>
-        </button>
-
-        <table class="table">
+        <h1>Product Database</h1>
+        <table class="admin-table">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -96,7 +98,7 @@ include 'connect.php';
 
 
                 <?php
-                $sql = "Select * from `cart`";
+                $sql = "Select * from `products`";
                 $result = mysqli_query($con, $sql);
                 if ($result) {
                     while ($row = mysqli_fetch_assoc($result)) {
@@ -110,18 +112,10 @@ include 'connect.php';
                       <td>' . $price . '</td>  
 
                       <td>
-                       <button class="btn btn-primary" >
-                        <a href = "itemUpdate.php? idUpdateCart= ' . $idCart . '" class="text-light"> Update 
-                        </a>
-                       </button>
-                       <button class="btn btn-danger" >
-                        <a href = "deleteCart.php? idDeleteCart=' . $idCart . '" class="text-light"> Delete 
-                        </a>
-                       </button>
-                      </td>
+                      <a class="button-update" title="Relevant Title" href = "itemUpdate.php? idUpdateCart= ' . $idCart . '">Update</a>
+                      <a class="button-delete" title="Relevant Title" href = "deleteCart.php? idDeleteCart=' . $idCart . '" >Delete</a>
                       </tr>';
                     }
-
                 }
 
                 ?>

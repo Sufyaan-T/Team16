@@ -34,37 +34,39 @@ if (isset($_POST['UpdateButton'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fill in Details</title>
-    <!--Bootstrap CSS link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Fill in Details</h1>
 
-    <div class="container my-5 ">
 
-        <button class="btn btn-primary my-5">
-            <a href="adminpage.php" class="text-light">Admin Page</a>
-        </button>
+<!-- Navigation Bar -->
+<div class="navbar">
+        <a href="#"><img src="images/Logo.png" class="logo"></a>
+        <ul>
+            <li><a href="user.php">Add User</a></li>
+            <li><a href="additem.php">Add Item</a></li>
+            <li><a href="adminpage.php">Database</a></li>
+            <li><a href="logout.php">Log Out</a></li>
 
-        <form method="post">
-            <div class="form-group">
-                <label>Name</label>
-                <input type="text-box" class="form-control" name="UserName" autocomplete="off"
-                    value="<?php echo $name ?> ">
-            </div>
-            <div class="form-group">
-                <label>Email address</label>
-                <input type="email" class="form-control"  name="UserEmail" autocomplete="off"
-                    value="<?php echo $email ?> ">
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="text-box" class="form-control" placeholder="Enter Password" name="UserPassword"
-                    autocomplete="off" value="<?php echo $password ?> ">
-            </div>
-            <button type="submit" class="btn btn-primary" name="UpdateButton">Update</button>
+        </ul>
+    </div>
+
+    <!-- Input box -->
+    <div class="addingBox">
+        <form class="addingInputs" method="post">
+            <h1>Update User Account</h1>
+
+            <input type="text-box" class="formInput"  name="UserName" autocomplete="off" value="<?php echo $name ?>">
+
+            <input type="text-box" class="formInput"  name="UserEmail" autocomplete="off" value="<?php echo $email ?>">
+
+            <input type="text-box" class="formInput"  name="UserPassword" autocomplete="off" value="<?php echo $password?>">
+            
+
+
+            <button type="submit" class="submitButton" name="UpdateButton">Update</button>
+
 
         </form>
 </body>

@@ -3,7 +3,7 @@
 include 'connect.php';
 
 $idCart = $_GET['idUpdateCart'];
-$sql = "Select * from `cart` where id=$idCart";
+$sql = "Select * from `products` where id=$idCart";
 $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_assoc($result);
 $name = $row['name'];
@@ -15,7 +15,7 @@ if (isset($_POST['UpdateButton'])) {
     $name = $_POST['ItemName'];
     $price  = $_POST['ItemPrice'];
 
-    $sql = "update `cart` set id=$idCart , name ='$name', price='$price ' where id=$idCart";
+    $sql = "update `products` set id=$idCart , name ='$name', price='$price ' where id=$idCart";
     $result = mysqli_query($con, $sql);
 
     if ($result) {
@@ -32,32 +32,35 @@ if (isset($_POST['UpdateButton'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Item Update</title>
-    <!--Bootstrap CSS link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Item Update</h1>
 
-    <div class="container my-5 ">
+<!-- Navigation Bar -->
+<div class="navbar">
+        <a href="#"><img src="images/Logo.png" class="logo"></a>
+        <ul>
+            <li><a href="user.php">Add User</a></li>
+            <li><a href="additem.php">Add Item</a></li>
+            <li><a href="adminpage.php">Database</a></li>
+            <li><a href="logout.php">Log Out</a></li>
 
-        <button class="btn btn-primary my-5">
-            <a href="adminpage.php" class="text-light">Admin Page</a>
-        </button>
+        </ul>
+    </div>
 
-        <form method="post">
-            <div class="form-group">
-                <label>Name</label>
-                <input type="text-box" class="form-control" name="ItemName" autocomplete="off"
-                    value="<?php echo $name?> ">
-            </div>
-            <div class="form-group">
-                <label>Price</label>
-                <input type="text-box" class="form-control" name="ItemPrice" autocomplete="off"
-                    value="<?php echo $price?> ">
-            </div>
-            <button type="submit" class="btn btn-primary" name="UpdateButton">Update</button>
+    <!-- Input box -->
+    <div class="addingBox">
+        <form class="addingInputs" method="post">
+            <h1>Update Product</h1>
+
+            <input type="text-box" class="formInput"  name="ItemName" autocomplete="off" value="<?php echo $name?>">
+
+            <input type="text-box" class="formInput"  name="ItemPrice" autocomplete="off"  value="<?php echo $price?>">
+
+
+            <button type="submit" class="submitButton" name="UpdateButton">Update</button>
+
 
         </form>
 </body>

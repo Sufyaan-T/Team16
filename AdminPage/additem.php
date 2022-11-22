@@ -7,7 +7,7 @@ if (isset($_POST['SubmitButton'])) {
     $name = $_POST['ItemName'];
     $price = $_POST['ItemPrice'];
 
-    $sql = "insert into `cart` (name, price) 
+    $sql = "insert into `products` (name, price) 
     values('$name','$price')";
     $result = mysqli_query($con, $sql);
 
@@ -23,31 +23,36 @@ if (isset($_POST['SubmitButton'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Add Item</title>
-    <!--Bootstrap CSS link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Add Item</h1>
 
-    <div class="container my-5 ">
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#"><img src="images/Logo.png" class="logo"></a>
+        <ul>
+            <li><a href="user.php">Add User</a></li>
+            <li><a href="additem.php">Add Item</a></li>
+            <li><a href="adminpage.php">Database</a></li>
+            <li><a href="logout.php">Log Out</a></li>
 
-    <button class="btn btn-primary my-5">
-            <a href="adminpage.php" class="text-light">Admin Page</a>
-        </button>
+        </ul>
+    </div>
 
-        <form method="post">
-            <div class="form-group">
-                <label>Name</label>
-                <input type="text-box" class="form-control" placeholder="Enter Name" name="ItemName" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <label>Price</label>
-                <input type="text-box" class="form-control" placeholder="Enter Price" name="ItemPrice" autocomplete="off">
-            </div>
-            <button type="submit" class="btn btn-primary" name="SubmitButton">Submit</button>
-            
+    <!-- Input box -->
+    <div class="addingBox">
+        <form class="addingInputs" method="post">
+            <h1>Add a Game</h1>
+
+            <input type="text-box" class="formInput" placeholder="Enter Name" name="ItemName" autocomplete="off">
+
+            <input type="text-box" class="formInput" placeholder="Enter Price" name="ItemPrice" autocomplete="off">
+
+
+            <button type="submit" class="submitButton" name="SubmitButton">Submit</button>
+
+
         </form>
 </body>
 </div>

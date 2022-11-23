@@ -130,3 +130,14 @@ body{
 .formLink:hover{
     text-decoration: underline;
 }
+
+.logo {
+    size: 1rem;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    padding-left: 10px;
+    display: inline-flex;
+    float: left;
+}
+

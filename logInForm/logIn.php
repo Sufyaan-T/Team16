@@ -15,21 +15,21 @@
 
         <div class="container">
 
-            <form class="form" id="login">
+            <form class="form" id="login" action="loginScript.php" method="POST">
 
                 <h1  class="formTitle">Login</h1>
                 <div class="formMessage formMessageError"></div>
                 <div class="formInputGroup">
-                    <input type="text" class="formInput" placeholder="Email Address" autofocus>
+                    <input type="text" class="formInput" placeholder="Email Address" autofocus name="email">
                     <div class="formInputErrorMessage"></div>
                 </div>
                 
                 <div class="formInputGroup">
-                    <input type="password" class="formInput" placeholder="Password" autofocus>
+                    <input type="password" class="formInput" placeholder="Password" autofocus name="password">
                     <div class="formInputErrorMessage"></div>
                 </div>
                 
-                <button class="formButton" type="Submit">Submit</button>
+                <button class="formButton" type="Submit" name="submit">Submit</button>
 
                 <p class="formText">
                     <a class="formLink" href="../AdminPage/AdminlogIn.html" >Log In as Administrator</a>

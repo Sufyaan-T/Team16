@@ -12,6 +12,22 @@ body {
     margin: 0;
 }
 
+.your-body{
+    margin: 1rem;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+p1 {
+    color: #ffffff;
+}
+
 /*Navbar at the top*/
 .navbar {
     width: 100%;

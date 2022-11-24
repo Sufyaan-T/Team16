@@ -32,13 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
         createAccountForm.classList.add("formHidden");
     });
 
-    logInForm.addEventListener("submit", e => {
-        e.preventDefault();
+    // logInForm.addEventListener("submit", e => {
+    //     e.preventDefault();
 
-        // perform ajax/fetch login
+    //     // perform ajax/fetch login
         
-        setFormMessage(logInForm, "error", "UserName/Password Combination is Invalid");
-    });
+    //     setFormMessage(logInForm, "error", "UserName/Password Combination is Invalid");
+    // });q
 
     document.querySelectorAll(".formInput").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {

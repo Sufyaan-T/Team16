@@ -1,0 +1,39 @@
+<?php 
+
+// establishes connection to database
+include '../AdminPage/connect.php';
+
+// function is created to check if data is valid
+function checkData($data, $errorMessage) {
+    if(isset($_POST[$data])) {
+        $temp = $_POST[$data];
+        $temp = trim($temp);
+        $temp = stripslashes($temp);
+        $temp = htmlspecialchars($temp);
+
+        if (!empty($temp)) {
+            return $temp;
+        } else {
+            header("Location: ./logIn.php?error=$errorMessage");
+            exit();
+        }
+    } else {
+        header("Location: ./logIn.php?error=$errorMessage");
+        exit();
+    }
+}
+
+// checks to see if data is valid and not empty
+// will present an error if it is invalid
+$fullName = checkData('fullName', 'Full Name Is Required!');
+$email = checkData('email', 'Email Is Required!');
+$password = checkData('password', 'Password Is Required!');
+// vPassword = verify password
+$vPassword = checkData('vPassword, Please Confirm Password!');
+    
+// checks to see if password matches 
+// outputs error 
+if($password !== $vPassword) {
+    header("Location: ./logIn.php?error=Password Confirmation Does Not Match!");
+    exit();
+}

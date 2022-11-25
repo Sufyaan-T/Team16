@@ -1,7 +1,7 @@
 <?php
 
 //Connects to databse
-include '../AdminPage/connect.php';
+include '../mainevent/connect.php';
 
 //seees if data is valid
 if(isset($_POST['email']) && isset($_POST['password'])) {

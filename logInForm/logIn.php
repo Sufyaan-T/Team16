@@ -2,7 +2,7 @@
 <html lang="en">
 
     <head>
-        <title>Log In</title>
+        <title>Log In - GAMES4U</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/logIn.css">        
     </head>
@@ -54,7 +54,7 @@
 
             <!-- form is set as hidden for the time being -->
             <!-- when create account link is click, it will show create account form and hide log in form -->
-            <form class="formHidden" id="createAccount">
+            <form class="formHidden" id="createAccount"  action="signUpScript.php" method="POST" >
                 
                 <h1  class="formTitle">Create Account</h1>
                 <div class="formMessage formMessageError"></div>

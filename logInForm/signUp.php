@@ -1,4 +1,28 @@
-            <form class="formHidden" id="createAccount">
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Sign Up - GAMES4U</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/logIn.css">        
+    </head>
+    
+    <body>
+        <!-- establising where java script file is located -->
+        <script src="./logIn.js"></script>
+
+        <!-- when logo is clicked, will take user back to home page -->
+        <a title="Click Here To Go Back To The Home Page" href="../BasicWebPage/basicWeb.html"> 
+            <img src="../BasicWebPage/images/Logo.png" class="logo">
+        </a>    
+
+        <!-- container that holds login/signup forms -->
+        <div class="container">
+
+
+            <!-- form is set as hidden for the time being -->
+            <!-- when create account link is click, it will show create account form and hide log in form -->
+            <form class="form" id="createAccount"  action="signUpScript.php" method="POST" >
                 
                 <h1  class="formTitle">Create Account</h1>
                 <div class="formMessage formMessageError"></div>
@@ -34,6 +58,12 @@
                     <!-- clicking this will hide sign up -->
                     <!-- will show log in form -->
                     <!-- done through js -->
-                    <a  class="formLink" id="linkLogIn">Already Have An Account? Sign In</a>
+                    <a  href="logIn.php" class="formLink" id="linkLogIn">Already Have An Account? Sign In</a>
                 </p>
             </form>
+            
+        </div>
+
+    </body>
+
+</html>

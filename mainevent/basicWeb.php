@@ -34,7 +34,7 @@ include 'functions.php';
                 echo '<li><a href="basket.php"><i class="fa-solid fa-basket-shopping"></i> </a></li>';
             } else {
                  echo '<li><a href="login.php"><i class="fa-solid fa-basket-shopping"></i> </a></li>';
-                // echo '<li> <script> alert ("You need to login to add to the basket!!!");window.location="basicWeb.php"</script>  <i class="fa-solid fa-basket-shopping"></i></li>';
+                // echo '<li><i class="fa-solid fa-basket-shopping"><script> alert ("You need to login to add to the basket!!!");window.location="login.php"</script></i></li>';
                 
             }
             ?>

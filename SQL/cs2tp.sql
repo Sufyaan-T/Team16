@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2022 at 07:39 PM
+-- Generation Time: Nov 24, 2022 at 11:24 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -74,6 +74,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
+(1, 'Zain Khel', 'a@a.com', 'a'),
 (5, 'Benjiishere', 'benji@gmail.com', 'dasdawdawd '),
 (7, 'Rilahisnotlate', 'rilah@gmail.com', 'wadwqdqwa '),
 (8, 'Tega ', 'tega123123@gmail.com', 'wadqdwdwqd ');

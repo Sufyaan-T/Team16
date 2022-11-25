@@ -2,7 +2,7 @@
 <html lang="en">
 
     <head>
-        <title>Log In - GAMES4U</title>
+        <title>Sign Up - GAMES4U</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/logIn.css">        
     </head>
@@ -19,42 +19,10 @@
         <!-- container that holds login/signup forms -->
         <div class="container">
 
-            <!-- code for the log in form -->
-            <form class="form" id="login" action="loginScript.php" method="POST">
-
-                <h1  class="formTitle">Login</h1>
-                <div class="formMessage formMessageError"></div>
-                <div class="formInputGroup">
-
-                    <!-- input for email -->
-                    <input type="email" class="formInput" placeholder="Email Address" autofocus name="email">
-                    <div class="formInputErrorMessage"></div>
-                </div>
-                
-                <div class="formInputGroup">
-
-                    <!-- input for password -->
-                    <input type="password" class="formInput" placeholder="Password" autofocus name="password">
-                    <div class="formInputErrorMessage"></div>
-                </div>
-
-                <!-- submit button -->
-                <button class="formButton" type="Submit" name="submit">Submit</button>
-
-                <p class="formText">
-                    <!-- click on this link to log in as admin -->
-                    <a class="formLink" href="../AdminPage/AdminlogIn.html" >Log In as Administrator</a>
-                </p>
-
-                <p class="formText">
-                    <!-- link changes form into a sign up form-->
-                    <a class="formLink" id="linkCreateAccount">Click Here To Create An Account!</a>
-                </p>
-            </form>
 
             <!-- form is set as hidden for the time being -->
             <!-- when create account link is click, it will show create account form and hide log in form -->
-            <form class="formHidden" id="createAccount"  action="signUpScript.php" method="POST" >
+            <form class="form" id="createAccount"  action="signUpScript.php" method="POST" >
                 
                 <h1  class="formTitle">Create Account</h1>
                 <div class="formMessage formMessageError"></div>
@@ -90,7 +58,7 @@
                     <!-- clicking this will hide sign up -->
                     <!-- will show log in form -->
                     <!-- done through js -->
-                    <a  class="formLink" id="linkLogIn">Already Have An Account? Sign In</a>
+                    <a  href="logIn.php" class="formLink" id="linkLogIn">Already Have An Account? Sign In</a>
                 </p>
             </form>
             

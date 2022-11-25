@@ -7,7 +7,7 @@ include 'connect.php';
 if (isset($_GET['idDeleteCart'])) {
     $idCart = $_GET['idDeleteCart'];
 
-    $sql = "delete from `cart` where id = $idCart";
+    $sql = "delete from `products` where id = $idCart";
     $result = mysqli_query($con, $sql);
 
     if ($result) {

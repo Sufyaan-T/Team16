@@ -8,14 +8,16 @@ $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_assoc($result);
 $name = $row['name'];
 $price  = $row['price'];
+$image = $row['image'];
 
 
 if (isset($_POST['UpdateButton'])) {
 
     $name = $_POST['ItemName'];
     $price  = $_POST['ItemPrice'];
+    $image = $_POST['image'];
 
-    $sql = "update `products` set id=$idCart , name ='$name', price='$price ' where id=$idCart";
+    $sql = "update `products` set id=$idCart , name ='$name', price='$price', image='$image' where id=$idCart";
     $result = mysqli_query($con, $sql);
 
     if ($result) {
@@ -33,12 +35,18 @@ if (isset($_POST['UpdateButton'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Item Update</title>
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        img {
+            width: 200px;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- Navigation Bar -->
-<div class="navbar">
+    <!-- Navigation Bar -->
+    <div class="navbar">
         <a href="#"><img src="images/Logo.png" class="logo"></a>
         <ul>
             <li><a href="user.php">Add User</a></li>
@@ -52,14 +60,21 @@ if (isset($_POST['UpdateButton'])) {
     <!-- Input box -->
     <div class="addingBox">
         <form class="addingInputs" method="post">
-            <h1>Update Product</h1>
+            <h1>Update Product id: <?php echo '' . $idCart . ''; ?></h1>
 
-            <input type="text-box" class="formInput"  name="ItemName" autocomplete="off" value="<?php echo $name?>">
+            <input type="text-box" class="formInput" name="ItemName" autocomplete="off" value="<?php echo $name ?>">
 
-            <input type="text-box" class="formInput"  name="ItemPrice" autocomplete="off"  value="<?php echo $price?>">
+            <input type="text-box" class="formInput" name="ItemPrice" autocomplete="off" value="<?php echo $price ?>">
+            <?php echo '<td> <img src="images/' . $image . '"/></d>'; ?>
+
+            <h2>Re-Upload Correct Image</h2>
+            <input type="file" name="image" id="file" autocomplete="off">
 
 
-            <button type="submit" class="submitButton" name="UpdateButton">Update</button>
+
+
+
+            <button type="submit" class="submitButton" title="example.jpg" name="UpdateButton">Update</button>
 
 
         </form>

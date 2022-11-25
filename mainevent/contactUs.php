@@ -1,3 +1,8 @@
+<?php
+include 'connect.php';
+include 'functions.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,12 +18,27 @@
 <body>
 
     <div class="navbar">
-        <a href="./basicWeb.html"><img src="images/Logo.png" class="logo"></a>
+        <a href="./basicWeb.php"><img src="images/Logo.png" class="logo"></a>
         <ul>
-            <li><a href="./aboutUs.html">About Us</a></li>
-            <li><a href="./contactUs.html">Contact Us</a></li>
-            <li><a href="../logInForm/logIn.html">Log In</a></li>
-            <li><a href="#"><i class="fa-solid fa-basket-shopping"></i> </a></li>
+            <li><a href="./aboutUs.php">About Us</a></li>
+            <li><a href="./contactUs.php">Contact Us</a></li>
+            <?php
+            session_start();
+            if (isset($_SESSION["id"])) {
+                echo "<li><a href='logout.php'>Log Out</a></li>";
+            } else {
+                echo "<li><a href='login.php'>Log In</a></li>";
+            }
+            ?>
+            <?php
+            session_start();
+            if (isset($_SESSION["id"])) {
+                echo '<li><a href="basket.php"><i class="fa-solid fa-basket-shopping"></i> </a></li>';
+            } else {
+                echo '<li><a href="login.php"><i class="fa-solid fa-basket-shopping"></i> </a></li>';
+            }
+            ?>
+            
         </ul>
 
     </div>

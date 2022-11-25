@@ -27,7 +27,7 @@ include 'connect.php';
             <li><a href="adduser.php">Add User</a></li>
             <li><a href="additem.php">Add Item</a></li>
             <li><a href="adminpage.php">Database</a></li>
-            <li><a href="logout.php">Log Out</a></li>
+            <li><a href="Adminlogout.php">Log Out</a></li>
 
         </ul>
     </div>

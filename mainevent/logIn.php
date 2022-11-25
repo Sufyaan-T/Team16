@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				if ($user_data['password'] === $password) {
 
 					$_SESSION['id'] = $user_data['id'];
-					header("Location: login.php");
+					header("Location:basicWeb.php");
 					die;
 				}
 			}
@@ -54,18 +54,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <body>
         <script src="./logIn.js"></script>
 
-        <a title="Click Here To Go Back To The Home Page" href="basicWeb.html"> 
+        <a title="Click Here To Go Back To The Home Page" href="basicWeb.php"> 
             <img src="images/Logo.png" class="logo">
         </a>    
 
         <div class="container">
 
-            <form class="form" id="login" action="loginScript.php" method="POST">
+            <form class="form" id="login" action="login.php" method="POST">
 
                 <h1  class="formTitle">Login</h1>
                 <div class="formMessage formMessageError"></div>
                 <div class="formInputGroup">
-                    <input type="text" class="formInput" placeholder="Email Address" autofocus name="email">
+                    <input type="email" class="formInput" placeholder="Email Address" autofocus name="email">
                     <div class="formInputErrorMessage"></div>
                 </div>
                 
@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <div class="formInputErrorMessage"></div>
                 </div>
                 
-                <button class="formButton" type="Submit" name="submit">Submit</button>
+                <button class="formButton" type="Submit" name="submit">Log In</button>
 
                 <p class="formText">
                     <a class="formLink" href="adminLogIn.php" >Log In as Administrator</a>

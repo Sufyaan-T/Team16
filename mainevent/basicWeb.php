@@ -1,3 +1,9 @@
+<?php
+include 'connect.php';
+include 'functions.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,10 +21,25 @@
     <div class="navbar">
         <a href="./basicWeb.html"><img src="images/Logo.png" class="logo"></a>
         <ul>
-            <li><a href="./aboutUs.html">About Us</a></li>
-            <li><a href="./contactUs.html">Contact Us</a></li>
-            <li><a href="logIn.php">Log In</a></li>
-            <li><a href="#"><i class="fa-solid fa-basket-shopping"></i> </a></li>
+            <li><a href="./aboutUs.php">About Us</a></li>
+            <li><a href="./contactUs.php">Contact Us</a></li>
+            <?php
+            session_start();
+            if (isset($_SESSION["id"])) {
+                echo "<li><a href='logout.php'>Log Out</a></li>";
+            } else {
+                echo "<li><a href='login.php'>Log In</a></li>";
+            }
+            if (isset($_SESSION["id"])) {
+                echo '<li><a href="basket.php"><i class="fa-solid fa-basket-shopping"></i> </a></li>';
+            } else {
+                 echo '<li><a href="login.php"><i class="fa-solid fa-basket-shopping"></i> </a></li>';
+                // echo '<li> <script> alert ("You need to login to add to the basket!!!");window.location="basicWeb.php"</script>  <i class="fa-solid fa-basket-shopping"></i></li>';
+                
+            }
+            ?>
+            
+            
         </ul>
 
     </div>
@@ -55,7 +76,7 @@
     </div>
 
     <div class ="your-body">
-        <h1>Home Page</h1>
+        
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>

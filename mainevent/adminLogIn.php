@@ -54,9 +54,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 </head>
 
 <body>
-	<script src="./js/AdminlogIn.js"></script>
+	<script src="js/AdminlogIn.js"></script>
 
-	<a title="Click Here To Go Back To The Home Page" href="/adminLogIn.php">
+	<a title="Click Here To Go Back To The Home Page" href="basicWeb.html">
 		<img src="images/Logo.png" class="logo">
 	</a>
 
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				<input type="password" class="formInput" name="password" placeholder="Administrator Password" autofocus>
 			</div>
 
-			<button>Log In</button>
+			<button class="formButton" name="Log In">Submit</button>
 
 			<p class="formText">
 				<a class="formLink" href="logIn.php">Log in as User</a>

@@ -3,9 +3,9 @@
 
     if(isset($_GET["action"])) {
         if($_GET["action"] == "remove") { 
-            foreach($_SESSION["cart"] as $keys => $values) { 
+            foreach($_SESSION["basket"] as $keys => $values) { 
                 if($values["productId"] == $_GET["id"]) { 
-                    unset($_SESSION["cart"][$keys]); 
+                    unset($_SESSION["basket"][$keys]); 
                     echo "Item Removed";
                 }
             }

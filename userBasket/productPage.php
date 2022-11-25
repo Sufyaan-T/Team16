@@ -105,10 +105,10 @@
                             <td> <?php echo $prodId ?> </td>
                             <td> <?php echo $prodPrice ?> </td>
                             <td> 
-                                <form method="post" action="addingToCart.php?action=add&id=<?php echo $row["id"]; ?>">
+                                <form method="post" action="addingToBasket.php?action=add&id=<?php echo $row["id"]; ?>">
                                     <input type = hidden name = "hiddenProductName" value="<?php echo $row['name']; ?>" >
                                     <input type = hidden name = "hiddenProductPrice" value="<?php echo $row['price']; ?>" >
-                                    <input type = submit name = "addTocart" value="Add To Cart" />
+                                    <input type = submit name = "addToBasket" value="Add To Basket" />
                                 </form>
                             </td>
                         </tr>

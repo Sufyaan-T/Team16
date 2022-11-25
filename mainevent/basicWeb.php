@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,12 +14,23 @@
 <body>
 
     <div class="navbar">
-        <a href="./basicWeb.html"><img src="images/Logo.png" class="logo"></a>
+        <a href="basicWeb.php"><img src="images/Logo.png" class="logo"></a>
         <ul>
-            <li><a href="./aboutUs.html">About Us</a></li>
-            <li><a href="./contactUs.html">Contact Us</a></li>
-            <li><a href="logIn.php">Log In</a></li>
-            <li><a href="#"><i class="fa-solid fa-basket-shopping"></i> </a></li>
+            <li><a href="aboutUs.php">About Us</a></li>
+            <li><a href="contactUs.php">Contact Us</a></li>
+            <?php
+            if (isset($_SESSION['user'])){
+                // will show log out when logged in
+                echo '<li><a href="php/userSignOut.php">Sign Out</a><li>';
+                // will show cart when logged in
+                echo '<li><a href="#"><i class="fa-solid fa-basket-shopping"></i></a></li>';
+            } else {
+                // when not logged in it will not show
+                echo '<li><a href="logIn.php">Log In</a></li>';
+            }
+            
+            ?> 
+           
         </ul>
 
     </div>
@@ -56,7 +68,8 @@
 
     <div class ="your-body">
         <h1>Home Page</h1>
-
+        <a href="php/userSignOut.php">Sign Out</a>
+            
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
 

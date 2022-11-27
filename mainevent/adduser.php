@@ -8,8 +8,7 @@ if (isset($_POST['SubmitButton'])) {
     $email = $_POST['UserEmail'];
     $password = $_POST['UserPassword'];
 
-    $sql = "insert into `users` (name,email,password) 
-    values('$name','$email','$password')";
+    $sql = "insert into `users` (name,email,password) values('$name','$email','$password')";
     $result = mysqli_query($con, $sql);
 
     if (!$result) {

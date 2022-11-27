@@ -1,4 +1,3 @@
-/*Benjamin Whitehead - 210092918*/
 * {
   font-family: "Montserrat", sans-serif;
   font-size: 500 1rem;
@@ -353,6 +352,7 @@ ul {
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
 }
+
  
 .button-update:hover {
     background: rgb(0, 255, 42);
@@ -419,3 +419,33 @@ input[type=text-box], select {
   margin-right:40%;
 
 }
+
+/* Basket Button*/
+
+.addToBasket {
+  width: 100%;
+  background-color: #000000;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  
+}
+
+.productSection{
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-top: 5%;
+  margin-left:40%;
+  margin-right:40%;
+
+
+
+}
+
+
+

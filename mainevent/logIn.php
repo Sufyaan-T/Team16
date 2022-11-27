@@ -31,10 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				}
 			}
 		}
+        
 
 		echo "<script> 
 			alert ('Wrong Username and Password!!!');window.location='login.php'	
 			</script>";
+            
 	} else {
 		echo "<script> 
 			alert ('Wrong Username and Password!!!');window.location='login.php'	
@@ -81,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 </p>
 
                 <p class="formText">
-                    <a class="formLink" id="linkCreateAccount">Click Here To Create An Account!</a>
+                    <a class="formLink" id="linkCreateAccount" href="signup.php">Click Here To Create An Account!</a>
                 </p>
             </form>
 

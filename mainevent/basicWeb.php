@@ -1,6 +1,9 @@
 <?php
 include 'connect.php';
 include 'functions.php';
+
+$sql = "SELECT * FROM products";
+$all_products = $con->query($sql);
 ?>
 
 
@@ -11,15 +14,52 @@ include 'functions.php';
     <title>Games4U</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/productPage.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://kit.fontawesome.com/c035b66456.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
+    <style>
+        img {
+            width: 100px;
+        }
+
+        .price {
+            color: black;
+            font-size: 22px;
+            text-align: center;
+        }
+
+
+        /* .vidcontainer {
+            position: relative;
+            width: 1500px;
+            height: 1370px;
+            margin-right: 1px;
+            background: #ddd;
+            border-radius: 15px;
+            display: flex;
+            overflow: hidden;
+
+        }*/
+
+        .vidbox {
+            width: 300px;
+            height: 200px;
+            background-color: white;
+            margin: 5px;
+            border-radius: 20px;
+            box-sizing: border-box;
+            overflow: wrap;
+        }
+    </style>
+
 </head>
 
 <body>
-
+    <!-- MAIN NAV BAR  -->
     <div class="navbar">
-        <a href="./basicWeb.html"><img src="images/Logo.png" class="logo"></a>
+        <a href="basicWeb.php"><img src="images/Logo.png" class="logo"></a>
         <ul>
             <li><a href="./aboutUs.php">About Us</a></li>
             <li><a href="./contactUs.php">Contact Us</a></li>
@@ -33,23 +73,25 @@ include 'functions.php';
             if (isset($_SESSION["id"])) {
                 echo '<li><a href="basket.php"><i class="fa-solid fa-basket-shopping"></i> </a></li>';
             } else {
-                 echo '<li><a href="login.php"><i class="fa-solid fa-basket-shopping"></i> </a></li>';
-                // echo '<li><i class="fa-solid fa-basket-shopping"><script> alert ("You need to login to add to the basket!!!");window.location="login.php"</script></i></li>';
-                
+                echo '<li><a href="login.php"><i class="fa-solid fa-basket-shopping"></i> </a></li>';
+                // echo '<li> <script> alert ("You need to login to add to the basket!!!");window.location="basicWeb.php"</script>  <i class="fa-solid fa-basket-shopping"></i></li>';
+
             }
             ?>
-            
-            
+
+
         </ul>
 
     </div>
+    <!-- END OFMAIN NAV BAR  -->
+
+    <!-- SUB NAV BAR -->
     <div class="navbar2">
         <div class="dropdown">
             <button class="dropbtn" onclick="myFunction1()">Xbox
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" id="Xbox">
-                <a href="#">Consoles</a>
                 <a href="#">Games</a>
                 <a href="#">Accessories</a>
             </div>
@@ -59,7 +101,6 @@ include 'functions.php';
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" id="Playstation">
-                <a href="#">Consoles</a>
                 <a href="#">Games</a>
                 <a href="#">Accessories</a>
             </div>
@@ -74,13 +115,29 @@ include 'functions.php';
             </div>
         </div>
     </div>
+    <!-- END OF SUB NAV BAR -->
+    <main>
 
-    <div class ="your-body">
-        
+        <?php while ($row = mysqli_fetch_assoc($all_products)) { ?>
+            <div class="vidbox">
+                <div class="card">
+                    <div class="image">
+                        <img src="images/<?php echo $row['image']; ?>">
+                    </div>
+                    <div class="caption">
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    </div>
+                        <p class="price"><?php echo $row['name']; ?></p>
+                        <p class="price"><?php echo $row['price']; ?></p>
+                    </div>
+                    
+                </div>
+            </div>
+        <?php } ?>
+    </main>
 
+    <aside>
+
+    </aside>
     <!---Footer--->
     <footer class="footer">
         <div class="container">
@@ -112,9 +169,11 @@ include 'functions.php';
             </div>
         </div>
     </footer>
+    <!---End of Footer--->
 
 
 
 </body>
-<!---End of Footer--->
+
+
 </html>

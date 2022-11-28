@@ -98,3 +98,104 @@ $all_products = $con->query($sql);
                 <a href="#">Accessories</a>
             </div>
         </div>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="myFunction3()">PC
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="PC">
+                <a href="#">Games</a>
+                <a href="#">Accessories</a>
+            </div>
+        </div>
+    </div>
+    <!-- END OF SUB NAV BAR -->
+    <div id="Checkout-Body">
+        <h2 style="padding-left:20% ;">Delivery address</h2>
+        <form enctype="text/plain" style="padding-left:20%;">
+            <label for="FistName">First Name</label><br>
+            <input type="text" name="FirstName" id="FirstName" style="width:30%;border-radius:5px;" required /> <br> <br>
+
+            <label for="LastName">Last Name</label><br>
+            <input type="text" name="LastName" id="LastName" style="width:30%;border-radius:5px;" required /> <br> <br>
+
+
+            <label for="CardNumber">Card Number</label> <br>
+            <input type="text" name="CardNumber" id="CardNumber" style="width:30%;border-radius:5px;" required /> <br> <br>
+
+
+            <label for="SecurityCode">Security Code</label> <br>
+            <input type="text" name="SecurityCode" id="SecurityCode" style="width:30%;border-radius:5px;" required /> <br> <br>
+
+            <label for="BillingAddress">Billing Address</label> <br>
+            <input type="text" name="BillingAddress" id="BillingAddress" style="width:30%;border-radius:5px;" required /> <br> <br>
+
+            <label for="City">City</label> <br>
+            <input type="text" name="City" id="City" style="width:30%;border-radius:5px;" required /> <br> <br>
+
+            <label for="Post code">Post code</label> <br>
+            <input type="text" name="PostCode" id="PostCode" style="width:30%;border-radius:5px;" required /> <br> <br>
+
+            <label for="Phone">Phone</label> <br>
+            <input type="text" name="Phone" id="Phone" style="width:30%;border-radius:5px;" required /> <br> <br>
+
+
+
+            <button type="submit">Submit</button>
+            <input type="reset" value="Reset">
+        </form>
+        <table style="padding-left:60%;">
+            <tr>
+                <th>Summary</th>
+            </tr>
+            <tr>
+                <td> <?php echo 'Items in basket: ', $_SESSION['basketItems']; ?></td>
+            </tr>
+            <tr>
+                <td><?php echo 'Total price: £', $_SESSION['totalPrice']; ?></td>
+            </tr>
+        </table>
+
+
+    </div>
+
+    <aside>
+
+    </aside>
+    <!---Footer--->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>find us</h4>
+                    <ul>
+                        <li>Store location:</li>
+                        <li>59-61 Station St, Birmingham B5 4DY</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>help</h4>
+                    <ul>
+                        <li><a href="./aboutUs.html">about us</a></li>
+                        <li><a href="./contactUs.html">Contact Us</a></li>
+                        <br>
+                        <li>Games4U.org</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!---End of Footer--->
+
+
+
+</body>
+
+</html>

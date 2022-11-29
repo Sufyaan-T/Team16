@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="ContactUsCSS.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://kit.fontawesome.com/c035b66456.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
 
     <title>Document</title>
 </head>
@@ -159,7 +162,7 @@
                 </div>
             </div>
 
-            <!-- Customer service form with a submit form That auto fills out the mail and sends. -->
+            <!-- Customer service form with a submit form That auto fills out the mail and sends. All the fields are needed be filled in order to send form  -->
             <div id="EnquriesHeader">
                 <h2 style="padding-left:30%; padding-top:5%; font-size:45px">Can't find what your looking for?</h2>
                 <h3 style="padding-left:40%; padding-top:5%; font-size:40px">Send us an email</h3>
@@ -168,19 +171,20 @@
 
                     <form method="POST" enctype="text/plain">
                         <label for="name">Full Name</label><br>
-                        <input type="text" name="name" id="name" style="width:60%;border-radius:5px;" /> <br> <br>
+                        <input type="text" name="name" id="name" style="width:60%;border-radius:5px;" required /> <br> <br>
 
                         <label for="email">Email address</label> <br>
-                        <input type="email" name="email" id="email" style="width:60%;border-radius:5px;" /> <br> <br>
+                        <input type="email" name="email" id="email" style="width:60%;border-radius:5px;" required /> <br> <br>
 
                         <label for="Subject">Subject</label> <br>
-                        <input type="text" name="Subject" id="Subject" style="width:60%;border-radius:5px;" placeholder="Required to send Email..." /> <br> <br>
+                        <input type="text" name="Subject" id="Subject" style="width:60%;border-radius:5px;" placeholder="Required to send Email..." required /> <br> <br>
 
                         <label for="Description">Description</label><br>
-                        <textarea name="Description" id="Description" cols="23" rows="5" style="width:60%;border-radius:5px;"></textarea>
+                        <textarea name="Description" id="Description" cols="23" rows="5" style="width:60%;border-radius:5px;" required></textarea>
 
-                        <input type="submit" value="Submit" class="formButton" onclick="Email()">
-                        <input type="reset" value="Reset" class="formButton">
+                        <div style="padding-right:80% ;">
+                            <input type="submit" value="Submit" class="formButton" onclick="Email()">
+                        </div>
                     </form>
                 </div>
             </div>
@@ -285,10 +289,10 @@
                     <form>
                         <div class="close">&times;</div>
                         <label for="name2">Name</label>
-                        <input type="text" name="DiscussionName" id="DiscussionName" placeholder="Enter name here..." style="width:100%; border-radius:5px;" /> <br>
+                        <input type="text" name="DiscussionName" id="DiscussionName" placeholder="Enter name here..." style="width:100%; border-radius:5px;" required /> <br>
 
                         <label for="Comment">Comment</label><br>
-                        <textarea name="Comment" id="Comment" cols="20" rows="5" placeholder="Type comment here..." style="width:100%; border-radius:5px;"></textarea>
+                        <textarea name="Comment" id="Comment" cols="20" rows="5" placeholder="Type comment here..." style="width:100%; border-radius:5px;" required></textarea>
 
                         <p>Ratings:</p>
                         <input type="range" min="1" max=5 id="ratings" name="ratings">
@@ -354,18 +358,21 @@
                 //This function allows users to click on the link,and when that link(parentElem) is pressed if another link is open(Showing the submenu(the nextElem)) it closes the previous link.
                 document.addEventListener("DOMContentLoaded", function() {
                     document.querySelectorAll('.sidebar .nav-link').forEach(function(element) {
-                        element.addEventListener('click', function(e) {
-                            let nextElem = element.nextElementSibling;
-                            let parentElem = element.parentElement;
+                        element.addEventListener('click', function(elem) {
+
+
+                            var nextElem = element.nextElementSibling;
+                            var parentElem = element.parentElement;
 
                             if (nextElem) {
-                                e.preventDefault();
-                                let mycollapse = new bootstrap.Collapse(nextElem);
+                                elem.preventDefault();
+
+                                var collapse = new bootstrap.Collapse(nextElem);
 
                                 if (nextElem.classList.contains('show')) {
-                                    mycollapse.hide();
+                                    collapse.hide();
                                 } else {
-                                    mycollapse.show();
+                                    collapse.show();
                                     // find other submenus with class=show
                                     var opened_submenu = parentElem.parentElement.querySelector('.submenu.show');
                                     // if it exists, then close all of them

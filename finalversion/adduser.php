@@ -30,6 +30,8 @@ if (isset($_POST['SubmitButton'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Add User</title>
     <link href="css/style.css" rel="stylesheet">
+    <!-- This is the line you need -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 
 <body>

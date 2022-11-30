@@ -41,6 +41,8 @@ if (isset($_POST['UpdateButton'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fill in Details</title>
     <link href="css/style.css" rel="stylesheet">
+    <!-- This is the line you need -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 
 <body>
@@ -50,7 +52,7 @@ if (isset($_POST['UpdateButton'])) {
     <div class="navbar">
         <a href="adminpage.php"><img src="images/Logo.png" class="logo"></a>
         <ul>
-            <li><a href="adminorders.php">View Orders</a></li>
+
             <li><a href="adduser.php">Add User</a></li>
             <li><a href="additem.php">Add Item</a></li>
             <li><a href="adminpage.php">Database</a></li>

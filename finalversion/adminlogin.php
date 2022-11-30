@@ -4,7 +4,7 @@
 session_start();
 
 include("connect.php");
-include ("functions.php");
+include("functions.php");
 
 
 
@@ -53,6 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	<title>Administrator Log In</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="./css/AdminlogIn.css">
+	<!-- This is the line you need -->
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
 </head>
 

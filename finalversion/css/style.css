@@ -20,7 +20,7 @@ body {
   justify-content: space-between;
   background-color: #2d0130;
   border-style: solid;
-  border-color:white;
+  border-color: white;
 }
 
 .logo {
@@ -364,7 +364,7 @@ ul {
 .basket-table tbody tr:last-of-type {
   border-bottom: 10px solid #ffffff;
 }
-/*Buttons*/
+/*Admin Buttons*/
 .button-update,
 .button-delete {
   display: inline-block;
@@ -378,6 +378,23 @@ ul {
   -moz-transition: all 0.2s;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+}
+.button-view {
+  display: inline-block;
+  margin: 5px; /* space between buttons */
+  background: #ffffff;
+  color: #000000;
+  font-size: 0.7em;
+  font-family: Helvetica;
+  border-radius: 15px; /* rounded corners */
+  padding: 8px 16px; /* space around text */
+  -moz-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.button-view:hover {
+  background: rgb(0, 38, 255);
+  color: #000000;
 }
 
 .button-update:hover {
@@ -444,6 +461,14 @@ select {
   margin-left: 40%;
   margin-right: 40%;
 }
+.addingBoxOrder {
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-top: 5%;
+  margin-left: 35%;
+  margin-right: 35%;
+}
 
 /* Basket Button*/
 
@@ -501,7 +526,7 @@ select {
 
   box-sizing: border-box;
   overflow: wrap;
-  border:  solid rgb(0, 0, 0);
+  border: solid rgb(0, 0, 0);
 }
 
 .contactBoxComment {
@@ -511,7 +536,6 @@ select {
   margin-right: 1px;
   display: flex;
   overflow: hidden;
-  
 }
 
 .detailsBoxComment {
@@ -524,11 +548,10 @@ select {
   box-sizing: border-box;
   overflow: scroll;
   border: 5px solid rgb(0, 0, 0);
-  
 }
 .detailsBoxB {
   width: 800px;
-  height: 1000px;
+  height: 950px;
   background-color: #747474;
   margin: 1%;
   margin-left: 30%;
@@ -539,14 +562,22 @@ select {
 }
 
 .detailsBoxInvoice {
-  width: 30%;
-  height: 700px;
+  width: 40%;
+  height: 900px;
   background-color: #ffffff;
   margin: 20px;
-  margin-left: 5%;
+  margin-left: 30%;
   padding: 2px;
   overflow: scroll;
   box-sizing: border-box;
   border: 5px solid rgb(0, 0, 0);
 }
 
+.contactBoxAdminOrder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-right: 1px;
+  display: flex;
+  overflow: scroll;
+}

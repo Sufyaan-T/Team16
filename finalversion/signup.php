@@ -39,9 +39,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="en">
 
 <head>
-    <title>Sign Up - GAMES4U</title>
+    <title>Sign Up</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/logIn.css">
+    <!-- This is the line you need -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 
 <body>

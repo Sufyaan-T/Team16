@@ -22,6 +22,8 @@ $all_products = $con->query($sql);
     <link rel="stylesheet" href="css/productPage.css">
     <script src="https://kit.fontawesome.com/c035b66456.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
+    <!-- This is the line you need -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <style>
         img {
             width: 200px;
@@ -34,9 +36,6 @@ $all_products = $con->query($sql);
             text-align: center;
         }
 
-
-
-
         .vidbox {
             width: 300px;
             height: 300px;
@@ -45,6 +44,35 @@ $all_products = $con->query($sql);
             border-radius: 20px;
             box-sizing: border-box;
             overflow: wrap;
+        }
+
+        .search {
+            width: 100%;
+            position: relative;
+            display: flex;
+        }
+
+        .searchTerm {
+            width: 200px;
+            border: 4px solid white;
+            border-right: none;
+            padding: 5px;
+            height: 20px;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            color: black;
+        }
+
+        .searchTerm:focus {
+            color: #00B4CC;
+        }
+
+        .wrap {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     </style>
 
@@ -55,10 +83,25 @@ $all_products = $con->query($sql);
     <div class="navbar">
         <a href="index.php"><img src="images/Logo.png" class="logo"></a>
         <ul>
+            <li>
+                <!-- SEARCH BAR -->
+                <!-- Search for product in the table, where user inputs is similar to a product in the table -->
+                <form method="POST" action="basicWeb.php.php" class="Form-Container">
+                    <input class="searchTerm" type="text" name="criteria" placeholder="Search...">
+                    <button class="searchButton" type="submit" name="reset"> <i class="fa fa-search fa-1x"></i> </button>
+                    <button type="submit" name="reset" value="Reset"> <i class="fa fa-refresh" aria-hidden="true"></i></button>
+                    <input type="hidden" name="searched" value="true" />
+
+
+
+
+                </form>
+            </li>
             <li><a href="index.php">Home</a></li>
             <li><a href="basicWeb.php">Games</a></li>
             <li><a href="aboutUs.php">About Us</a></li>
             <li><a href="contactUs.php">Contact Us</a></li>
+
             <?php
 
             if (isset($_SESSION["id"])) {
@@ -72,18 +115,29 @@ $all_products = $con->query($sql);
             } else {
                 echo '<li><a href="login.php"><i class="fa-solid fa-basket-shopping" style="color:white;"></i></a></li>';
             }
-
             ?>
+
 
 
         </ul>
 
     </div>
-    <!-- END OFMAIN NAV BAR  -->
-
-
-
-
+    <!-- END OF MAIN NAV BAR  -->
+    <?php
+    if (isset($_POST["searched"])) {
+        if (isset($_POST["criteria"])) {
+            $search = $_POST["criteria"];
+            $sql = "SELECT * FROM products WHERE name LIKE '%{$search}%'";
+            $all_products = $con->query($sql);
+        } else {
+            $sql = "SELECT * FROM products";
+            $all_products = $con->query($sql);
+        }
+    } elseif (isset($_POST["reset"])) {
+        $sql = "SELECT * FROM products";
+        $all_products = $con->query($sql);
+    }
+    ?>
 
     <!-- The start of the products page -->
     <main>
@@ -120,7 +174,7 @@ $all_products = $con->query($sql);
     <!-- end of the products page -->
 
 
-    </div>
+
 
 
 

@@ -3,9 +3,9 @@
 session_start();
 //disallows any and all access to this page UNLESS you sign in
 include("connect.php");
-include ("functions.php");
- if (!isset($_SESSION['id'])) {
-     header("Location:adminlogin.php");
+include("functions.php");
+if (!isset($_SESSION['id'])) {
+    header("Location:adminlogin.php");
 }
 ?>
 <!DOCTYPE html>
@@ -16,6 +16,8 @@ include ("functions.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
+    <!-- This is the line you need -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <title>Admin Page</title>
 
     <style>
@@ -41,10 +43,9 @@ include ("functions.php");
     </div>
     <!-- USERS TABLE -->
 
-
     <div class="container">
-        <h1>
-            <ul>User Database</ul>
+        <h1 style="color:white;">
+            User Database
         </h1>
         <table class="admin-table">
             <thead>
@@ -92,9 +93,64 @@ include ("functions.php");
     </div>
     <!-- END OF USERS TABLE -->
 
-    <!-- CART TABLE -->
+    <!-- Order Table -->
     <div class="container">
-        <h1>Product Database</h1>
+        <h1 style="color:white;">
+            User Database
+        </h1>
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th scope="col">Order Id #</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Ammount Payed</th>
+                    <th scope="col">Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $sql = "Select * from `billingdetails`";
+                $result = mysqli_query($con, $sql);
+                if ($result) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $idOrder = $row['id'];
+                        $name = $row['name'];
+                        $email = $row['billingEmail'];
+                        $product = $row['product'];
+                        $productprice = $row['productprice'];
+                        echo '
+                        <tr>
+                      <th scope="row">' . $idOrder . '</th>
+                      <td>' . $name . '</td>
+                      <td>' . $email . '</td>
+                      <td>' . $product . '</td>
+                      <td>£' . $productprice . '</td>                     
+
+                      <td>
+                     
+
+                       <a class="button-update" title="Relevant Title" href = "orderupdate.php? OrderUpdate= ' . $idOrder . '">Update</a>
+                       <a class="button-delete" title="Relevant Title" href = "orderdelete.php? OrderDelete=' . $idOrder . '">Delete</a>
+                       <a class="button-view" title="Relevant Title" href = "vieworder.php" >View Order</a>
+
+                       
+                       
+                      </td>
+                      </tr>';
+                    }
+                }
+
+                ?>
+            </tbody>
+        </table>
+    </div>
+    <!-- end of order table -->
+
+    <!-- PRODUCT TABLE -->
+    <div class="container">
+        <h1 style="color:white;">Product Database</h1>
         <table class="admin-table">
             <thead>
                 <tr>
@@ -124,11 +180,12 @@ include ("functions.php");
                       <td> <img src="images/' . $image . '"/></d>
                       <td>' . $name . '</td>
                       <td>£' . $price . '</td>  
-                      <td>'.$information.'</td>
+                      <td>' . $information . '</td>
 
                       <td>
                       <a class="button-update" title="Relevant Title" href = "productupdate.php? idUpdateCart= ' . $idCart . '">Update</a>
                       <a class="button-delete" title="Relevant Title" href = "deleteProduct.php? idDeleteCart=' . $idCart . '" >Delete</a>
+                      
                       </tr>';
                     }
                 }

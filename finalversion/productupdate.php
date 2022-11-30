@@ -23,8 +23,9 @@ if (isset($_POST['UpdateButton'])) {
     $name = $_POST['ItemName'];
     $price  = $_POST['ItemPrice'];
     $image = $_POST['image'];
+    $information = $_POST['information'];
 
-    $sql = "update `products` set id=$idCart , name ='$name', price='$price', image='$image' information='$information' where id=$idCart";
+    $sql = "update `products` set id=$idCart , name ='$name', price='$price', image='$image', information='$information' where id='$idCart'";
     $result = mysqli_query($con, $sql);
 
     if ($result) {
@@ -42,6 +43,8 @@ if (isset($_POST['UpdateButton'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Item Update</title>
     <link href="css/style.css" rel="stylesheet">
+    <!-- This is the line you need -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
     <style>
         img {
@@ -54,9 +57,9 @@ if (isset($_POST['UpdateButton'])) {
 
     <!-- Navigation Bar -->
     <div class="navbar">
-        <a href="#"><img src="images/Logo.png" class="logo"></a>
+        <a href="adminpage.php"><img src="images/Logo.png" class="logo"></a>
         <ul>
-            <li><a href="adminorders.php">View Orders</a></li>
+            
             <li><a href="user.php">Add User</a></li>
             <li><a href="additem.php">Add Item</a></li>
             <li><a href="adminpage.php">Database</a></li>
@@ -69,13 +72,9 @@ if (isset($_POST['UpdateButton'])) {
     <div class="addingBox">
         <form class="addingInputs" method="post">
             <h1>Update Product id: <?php echo '' . $idCart . ''; ?></h1>
-
             <input type="text-box" class="formInput" name="ItemName" autocomplete="off" value="<?php echo $name ?>">
-
             <input type="text-box" class="formInput" name="ItemPrice" autocomplete="off" value="<?php echo $price ?>">
-
-
-            <textarea type="text-box" class="formInput" name="info" placeholder="<?php echo $information ?>" style="height:100px"></textarea>
+            <textarea type="text-box" class="formInput" name="information" value="" style="height:100px"><?php echo $information ?></textarea>
              <!-- way to print the image on screen so the admin can see what he is working with -->
             <?php echo '<td> <img src="images/' . $image . '"/></d>'; ?>
 

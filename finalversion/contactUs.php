@@ -36,6 +36,8 @@ if (isset($_POST['SubmitButton'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://kit.fontawesome.com/c035b66456.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
+    <!-- This is the line you need -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <style>
 
     </style>

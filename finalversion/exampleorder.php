@@ -50,7 +50,7 @@ if (isset($_POST['UpdateButton'])) {
 
     $sql = "UPDATE billingdetails set id=$idOrder , name ='$name', billingEmail='$email',nameOnCard='$nameOnCard', address='$address', 
     debitCardNumber='$debitCardNumber', city='$city', county='$county', postcode='$postcode', expyear='$expyear',expmonth='$expmonth', cvv='$cvv ', 
-    product='$product', productprice='$productprice', date='$date',  where id = $idOrder";
+    product='$product', productprice='$productprice', date='$date'  where id = $idOrder";
     $result = mysqli_query($con, $sql);
 
     if ($result) {

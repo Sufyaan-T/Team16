@@ -1,0 +1,6 @@
+in the connect.php file you will find the 
+way i connect to these databases.
+change the code to suit your needs, 
+what you seek, you will find there
+
+-PX

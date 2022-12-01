@@ -1,0 +1,115 @@
+
+*{
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+body{
+    background-color: #4b0150;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+}
+.PS5container{
+    width: 80vw;
+    height:80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.header{
+    width: 100%;
+    text-align: center;
+}
+
+.basket button:hover{
+    transform: scale(1.1);
+}
+.header h1{
+    font-size: 4em;
+    text-transform: uppercase;
+    color: #ccc
+}
+.PS5products{
+    
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%;
+    align-self: center;
+    height: 70%;
+    display: flex;
+}
+.product{
+    
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 20px 40px;
+    border-radius: 10px;
+    transition: .3s;
+    position: relative;
+    background-color: #ccc;
+    width: 350px;
+    height: 100%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
+    display: flex;
+}
+
+.image{
+   
+    display: grid;
+    padding-top: 10%;
+    width:100%;
+    height: 60%;
+    place-content: center;
+}
+.image img{
+    width: 240px;
+}
+.details{
+    width: 100%;
+  
+    justify-content: space-between;
+}
+.details h3{
+    font-size: 1.5em;
+    text-transform: capitalize;
+    color: #2d0130;
+   
+}
+.details span{
+    font-size: 2em;
+    color: #11d311
+}
+
+.basket{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+.basket button{
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: none;
+    background-color:#2d0130;
+    color: #ccc;
+    font-size: 18px;
+    text-transform: capitalize;
+   
+}
+.navbar{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: #2d0130;
+    border-style: solid;
+    border-color: white;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color:black;
+}
+
+a{
+    text-decoration: none;
+}

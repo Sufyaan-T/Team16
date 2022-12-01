@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="details.css">
+    <title>Fortnite</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="index.php"><img src="images/Logo.png" class="logo"></a>
+        <ul>
+            <li>
+                <!-- SEARCH BAR -->
+                <!-- Search for product in the table, where user inputs is similar to a product in the table -->
+                <form method="POST" action="basicWeb.php" class="Form-Container">
+                    <input class="searchTerm" type="text" name="criteria" placeholder="Search for an item!">
+                    <button class="searchButton" type="submit" name="reset"> <i class="fa fa-search fa-1x"
+                            aria-hidden="true"></i> </button>
+                    <button type="submit" name="reset" value="Reset"> <i class="fa fa-refresh"
+                            aria-hidden="true"></i></button>
+                    <input type="hidden" name="searched" value="true">
+
+                </form>
+            </li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="basicWeb.php">Games</a></li>
+            <li><a href="aboutUs.php">About Us</a></li>
+            <li><a href="contactUs.php">Contact Us</a></li>
+
+
+            <li><a href="login.php">Log In</a></li>
+            <li><a href="login.php"><i class="fa-solid fa-basket-shopping" style="color:white;"></i></a></li>
+
+
+        </ul>
+
+    </div>
+    <div class="card-wrapper">
+        <div class="card">
+
+            <div class="product-image">
+                <img src="/PS5images/fortnite.webp" alt="">
+            </div>
+
+            <div class="product-description">
+                <h2 class="product-title">Fortnite</h2>
+                <h5>Epic Games Inc.</h5>
+                <h1><span>FREE</span></h1>
+
+                <div class="product-price">
+
+
+                    <div class=" basket">
+                        <button> Add To Basket </button>
+                    </div>
+                </div>
+
+                <div class="product-detail">
+                    <h2>ABOUT THIS GAME </h2>
+                    <p>
+                    <p>Fortnite is the always evolving, multiplayer game where you and your friends battle to be the
+                        last one standing or collaborate to create your dream Fortnite world.</p>
+                    <p>Play both Battle Royale and Fortnite Creative for free or purchase access to Fortnite’s PvE
+                        Campaign mode, Save the World.</p>
+                    <p>All in-game purchases are discretionary, including the Save the World campaign, cosmetic items
+                        (e.g. Outfits), V-Bucks and seasonal account progression products like the Battle Pass. Download
+                        now and jump into the action.</p>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="trailer">
+                <h2>Game Trailer</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/H-sFdMgJ93M"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+
+
+</body>
+
+</html>

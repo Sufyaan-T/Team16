@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="details.css">
+    <title>Call of Duty®: Modern Warfare® II</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="index.php"><img src="images/Logo.png" class="logo"></a>
+        <ul>
+            <li>
+                <!-- SEARCH BAR -->
+                <!-- Search for product in the table, where user inputs is similar to a product in the table -->
+                <form method="POST" action="basicWeb.php" class="Form-Container">
+                    <input class="searchTerm" type="text" name="criteria" placeholder="Search for an item!">
+                    <button class="searchButton" type="submit" name="reset"> <i class="fa fa-search fa-1x"
+                            aria-hidden="true"></i> </button>
+                    <button type="submit" name="reset" value="Reset"> <i class="fa fa-refresh"
+                            aria-hidden="true"></i></button>
+                    <input type="hidden" name="searched" value="true">
+
+                </form>
+            </li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="basicWeb.php">Games</a></li>
+            <li><a href="aboutUs.php">About Us</a></li>
+            <li><a href="contactUs.php">Contact Us</a></li>
+
+
+            <li><a href="login.php">Log In</a></li>
+            <li><a href="login.php"><i class="fa-solid fa-basket-shopping" style="color:white;"></i></a></li>
+
+
+        </ul>
+
+    </div>
+    <div class="card-wrapper">
+        <div class="card">
+
+            <div class="product-image">
+                <img src="/PS5images/call of duty.jpg" alt="">
+            </div>
+
+            <div class="product-description">
+                <h2 class="product-title">Call of Duty®: Modern Warfare® II</h2>
+                <h5>Activision Blizzard Int'l BV</h5>
+                <h1><span>£69.99</span></h1>
+
+                <div class="product-price">
+
+
+                    <div class=" basket">
+                        <button> Add To Basket </button>
+                    </div>
+                </div>
+
+                <div class="product-detail">
+                    <h2>ABOUT THIS GAME </h2>
+                    <p>
+                    <h3>Welcome to the new era of Call of Duty®.</h3>
+
+                    <p>Call of Duty®: Modern Warfare® II drops players into an unprecedented global conflict that
+                        features the return of the iconic Operators of Task Force 141.</p>
+
+                    <p>Infinity Ward brings fans state-of-the-art gameplay, with all-new gun handling, advanced AI
+                        system, a new Gunsmith and a suite of other gameplay and graphical innovations that elevate the
+                        franchise to new heights.</p>
+
+                    <p>Modern Warfare® II launches with a globe-trotting single-player campaign, immersive Multiplayer
+                        combat and an evolved Special Ops game mode featuring tactical co-op gameplay.
+                    </p>
+                    <p> You also get access to Call of Duty®: Warzone™ 2.0, the all-new Battle Royale experience.</p>
+                    </p>
+                </div>
+            </div>
+            <div class="trailer">
+                <h2>Game Trailer</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/r72GP1PIZa0"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+
+
+
+
+</body>
+
+</html>
